@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Stok Bahan Ajar</title>
+  <link rel="stylesheet" href="stok.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1><i class="fas fa-book"></i> Stok Bahan Ajar UT</h1>
+    </header>
+
+    <section class="filter">
+      <h2><i class="fas fa-filter"></i> Filter & Sortir</h2>
+      <div class="filter-group">
+        <label>UT-Daerah:</label>
+        <select v-model="filterUpbjj">
+          <option value="">Semua</option>
+          <option v-for="u in upbjjList" :value="u">{{ u }}</option>
+        </select>
+
+        <label>Kategori:</label>
+        <select v-model="filterKategori">
+          <option value="">Semua</option>
+          <option v-for="k in kategoriList" :value="k">{{ k }}</option>
+        </select>
+
+        <label><input type="checkbox" v-model="filterMenipis"> <i class="fas fa-exclamation-triangle text-warning"></i> Stok &lt; Safety</label>
+        <label><input type="checkbox" v-model="filterKosong"> <i class="fas fa-times-circle text-danger"></i> Stok = 0</label>
+
+        <button class="reset" @click="resetFilter"><i class="fas fa-undo"></i> Reset</button>
+      </div>
+    </section>
+
+    <section class="table-container">
+      <h2><i class="fas fa-table"></i> Daftar Stok</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Kode</th>
+            <th>Judul</th>
+            <th>Kategori</th>
+            <th>UT-Daerah</th>
+            <th>Lokasi Rak</th>
+            <th>Qty</th>
+            <th>Safety</th>
+            <th>Harga</th>
+            <th>Status</th>
+            <th>Catatan</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in filteredStok" :key="index">
+            <td>{{ item.kode }}</td>
+            <td>{{ item.judul }}</td>
+            <td>{{ item.kategori }}</td>
+            <td>{{ item.upbjj }}</td>
+            <td>{{ item.lokasiRak }}</td>
+            <td>{{ item.qty }}</td>
+            <td>{{ item.safety }}</td>
+            <td>Rp {{ formatNumber(item.harga) }}</td>
+            <td v-html="statusText(item)"></td>
+            <td v-html="item.catatanHTML"></td>
+            <td><button @click="editItem(item)" class="edit"><i class="fas fa-edit"></i></button></td>
+          </tr>
+          <tr v-if="filteredStok.length === 0">
+            <td colspan="11">Tidak ada data</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="form-section" v-if="editMode">
+      <h2><i class="fas fa-pen"></i> Edit Stok</h2>
+      <form @submit.prevent="saveEdit">
+        <input v-model="editItemData.kode" placeholder="Kode" disabled>
+        <input v-model="editItemData.judul" placeholder="Judul">
+        <input v-model="editItemData.kategori" placeholder="Kategori">
+        <input v-model="editItemData.upbjj" placeholder="UT-Daerah">
+        <input v-model="editItemData.lokasiRak" placeholder="Lokasi Rak">
+        <input type="number" v-model.number="editItemData.qty" placeholder="Qty">
+        <input type="number" v-model.number="editItemData.safety" placeholder="Safety">
+        <input type="number" v-model.number="editItemData.harga" placeholder="Harga">
+        <textarea v-model="editItemData.catatanHTML" placeholder="Catatan (HTML)"></textarea>
+        <button type="submit" class="save"><i class="fas fa-save"></i> Simpan</button>
+        <button type="button" class="cancel" @click="cancelEdit"><i class="fas fa-times"></i> Batal</button>
+      </form>
+    </section>
+
+    <section class="form-section">
+      <h2><i class="fas fa-plus"></i> Tambah Data Bahan Ajar</h2>
+      <form @submit.prevent="addNew">
+        <input v-model="newItem.kode" placeholder="Kode">
+        <input v-model="newItem.judul" placeholder="Judul">
+        <input v-model="newItem.kategori" placeholder="Kategori">
+        <input v-model="newItem.upbjj" placeholder="UT-Daerah">
+        <input v-model="newItem.lokasiRak" placeholder="Lokasi Rak">
+        <input type="number" v-model.number="newItem.qty" placeholder="Qty">
+        <input type="number" v-model.number="newItem.safety" placeholder="Safety">
+        <input type="number" v-model.number="newItem.harga" placeholder="Harga">
+        <textarea v-model="newItem.catatanHTML" placeholder="Catatan (HTML)"></textarea>
+        <button type="submit" class="save"><i class="fas fa-save"></i> Simpan</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="dataBahanAjar.js"></script>
+  <script src="stok-app.js"></script>
+</body>
+</html>

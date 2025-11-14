@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header>
+    <h2>Dashboard Bahan Ajar SITTA</h2>
+  </header>
+
+  <section class="greeting">
+    <div class="greeting-icon">👋</div>
+    <div class="greeting-text">
+      <h3 id="greetingMsg">Halo, Selamat Datang!</h3>
+      <p id="timeInfo">Sekarang pukul --:-- WIB</p>
+    </div>
+  </section>
+
+  <main class="menu-container">
+    <div class="menu-card" onclick="goTo('stok.html')">
+      <img src="https://img.icons8.com/fluency/96/box.png" alt="Stok Bahan Ajar">
+      <h3>Stok Bahan Ajar</h3>
+      <p>Lihat dan kelola stok bahan ajar.</p>
+    </div>
+
+    <div class="menu-card" onclick="goTo('tracking.html')">
+      <img src="https://img.icons8.com/fluency/96/delivery.png" alt="Tracking Bahan Ajar">
+      <h3>Tracking Bahan Ajar</h3>
+      <p>Lacak distribusi bahan ajar.</p>
+    </div>
+  </main>
+
+  <footer>
+    <button onclick="logout()">Logout</button>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

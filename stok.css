@@ -1,0 +1,92 @@
+body {
+  font-family: 'Lora', sans-serif;
+  background: #f5f8fc;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: rgb(0, 123, 255);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+section {
+  background: white;
+  margin: 20px auto;
+  padding: 20px;
+  width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+h1 i {
+  color: rgba(2, 47, 86);
+}
+
+h2 {
+  color: #004085;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.filter-group select,
+input[type="number"],
+input[type="text"],
+textarea {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-width: 120px;
+}
+
+button {
+  border: none;
+  padding: 7px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+button.save { background: #28a745; }
+button.cancel { background: #6c757d; }
+button.reset { background: #dc3545; }
+button.edit { background: #007bff; }
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.table-container th {
+  background: #0056b3;
+  color: white;
+  padding: 10px;
+}
+
+.table-container td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.text-warning { color: orange; }
+.text-danger { color: red; }
+.text-success { color: green; }
+
+form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}

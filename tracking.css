@@ -1,0 +1,269 @@
+body {
+  font-family: "Lora", sans-serif;
+  background-color: #eef2f9;
+  margin: 0;
+  color: #333;
+}
+
+/* === HEADER === */
+header {
+  background: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 25px 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+header h1 {
+  font-size: 30px;
+  margin: 0;
+}
+header h1 i {
+  margin-right: 10px;
+}
+
+/* Container pencarian DO */
+.search-box {
+  background: white;
+  width: 95%;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-left: 5px solid #0d6efd;
+}
+
+.search-box label {
+  font-weight: bold;
+  color: #0d316e;
+  white-space: nowrap;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #0d6efd;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-box input:focus {
+  border-color: #003cbe;
+  background: #eaf1ff;
+}
+
+/* Tombol Cari */
+#btnCari {
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.25s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Icon kaca pembesar */
+#btnCari i {
+  font-size: 12px;
+}
+
+
+/* ================================================================
+//FORM TAMBAH DELIVERY ORDER
+================================================================ */
+.form-tambah {
+  background: #fff;
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.6s ease;
+}
+.form-tambah h2 {
+  color: #003c80;
+  font-size: 26px;
+  border-left: 5px solid #007bff;
+  padding-left: 12px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* FORM GROUP */
+.form-group {
+  margin-bottom: 18px;
+}
+.form-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #003c80;
+}
+
+/* INPUT & SELECT STYLE — FIXED */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #004a99;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s;
+  background-color: #ffffff;
+  color: #003c80;
+  appearance: auto;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.35);
+  outline: none;
+}
+
+/* FIX PILIHAN SELECT TIDAK TERLIHAT */
+.form-group select option {
+  background: #fff;
+  color: #003c80;
+  padding: 10px;
+}
+
+/* DETAIL PAKET */
+#detailPaket {
+  background: #f1f6ff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border-left: 4px solid #007bff;
+  animation: slideDown 0.4s ease;
+}
+#detailPaket ul {
+  margin-top: 10px;
+}
+
+/* BUTTON SIMPAN */
+.btn-save {
+  background-color: #28a745;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-save:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* ================================================================
+   HASIL TRACKING
+================================================================ */
+.tracking-card {
+  background: #fff;
+  max-width: 850px;
+  margin: 25px auto;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tracking-header h2 {
+  color: #004a99;
+  border-left: 5px solid #004a99;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.tracking-info p {
+  margin: 8px 0;
+  font-size: 17px;
+}
+.tracking-info i {
+  color: #004a99;
+  margin-right: 8px;
+}
+
+/* PROGRESS BAR */
+.progress-container {
+  margin-top: 20px;
+}
+.progress {
+  background-color: #dcdcdc;
+  border-radius: 10px;
+  height: 10px;
+  position: relative;
+}
+#progressBar {
+  background-color: #007bff;
+  height: 10px;
+  border-radius: 10px;
+  width: 0%;
+  transition: width 0.8s ease-in-out;
+}
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  color: #004a99;
+  margin-top: 10px;
+}
+
+/* RIWAYAT PERJALANAN */
+#riwayatPerjalanan {
+  list-style: none;
+  padding: 0;
+}
+#riwayatPerjalanan li {
+  background: #f8f9ff;
+  padding: 10px;
+  margin: 8px 0;
+  border-left: 5px solid #007bff;
+  border-radius: 5px;
+}
+#riwayatPerjalanan li i {
+  color: #007bff;
+  margin-right: 8px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  padding: 5px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+/* HIDDEN CLASS */
+.hidden {
+  display: none;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
