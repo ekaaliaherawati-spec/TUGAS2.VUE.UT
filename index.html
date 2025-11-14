@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login - SITTA UT</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="extra-links">
+      <a href="#" id="forgotPasswordBtn">Lupa Password?</a> |
+      <a href="#" id="registerBtn">Daftar</a>
+    </div>
+  </div>
+
+  <!-- Modal Lupa Password -->
+  <div id="forgotModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Lupa Password</h3>
+      <p>Silakan hubungi admin untuk reset password.</p>
+    </div>
+  </div>
+
+  <!-- Modal Daftar -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Form Pendaftaran</h3>
+      <p>Fitur ini belum aktif.</p>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
